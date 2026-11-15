@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shinjitsu: descubre la verdad de Japón más allá de los estereotipos. Una campaña de Invictus.">
+<title>SHINJITSU — Desbloquea la verdad de Japón</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap');
+:root{--ink:#111114;--paper:#f7f3ec;--red:#b72d32;--gold:#c9a66b;--muted:#77736d;--line:rgba(20,20,20,.13)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 7%;background:rgba(17,17,20,.96);color:white;position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(255,255,255,.12)}
+.logo{font-family:'Playfair Display',serif;font-size:27px;letter-spacing:4px}.logo span{color:var(--gold)}.navlinks{display:flex;gap:30px;font-size:12px;letter-spacing:1.2px;text-transform:uppercase}.navlinks a{opacity:.82}.navlinks a:hover{color:var(--gold);opacity:1}.menu{display:none;background:none;border:0;color:white;font-size:25px}
+.hero{min-height:690px;display:grid;grid-template-columns:1.05fr .95fr;background:var(--ink);color:white;overflow:hidden}
+.hero-copy{padding:105px 7vw 90px 13%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500}h1{font-size:clamp(60px,8vw,112px);line-height:.92;letter-spacing:-3px;margin:24px 0}
+.hero h1 em{font-style:normal;color:var(--gold)}.hero-copy p{max-width:470px;color:#d1cec8;line-height:1.8;font-size:16px}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:25px}.btn{padding:15px 22px;border:1px solid var(--gold);background:var(--gold);color:#161515;font-size:11px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase;transition:.2s}.btn:hover{transform:translateY(-3px);background:#dfc18e}.btn.outline{background:transparent;color:white;border-color:rgba(255,255,255,.5)}
+.hero-art{position:relative;min-height:560px;background:linear-gradient(180deg,rgba(10,10,10,.05),rgba(10,10,10,.4)),url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1400&q=85') center/cover}
+.hero-art:after{content:"真実";position:absolute;right:9%;bottom:8%;font-family:serif;font-size:clamp(90px,14vw,190px);color:rgba(255,255,255,.75);writing-mode:vertical-rl;text-shadow:0 5px 25px #0005}
+.art-label{position:absolute;bottom:35px;left:35px;background:var(--red);padding:13px 18px;font-size:10px;letter-spacing:2px;text-transform:uppercase}
+.marquee{background:var(--red);color:white;padding:16px 5%;font-family:'Playfair Display',serif;font-size:20px;text-align:center;letter-spacing:1px}
+section{padding:100px 9%}.section-head{max-width:720px;margin:0 auto 55px;text-align:center}.section-head .eyebrow{color:var(--red)}h2{font-size:clamp(38px,5vw,64px);line-height:1.05;margin:15px 0}.section-head p{color:var(--muted);line-height:1.8}
+.problem{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.problem-img{height:470px;background:url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1200&q=85') center/cover;position:relative}.problem-img:after{content:"MÁS ALLÁ DE LA PANTALLA";position:absolute;bottom:22px;left:22px;background:var(--ink);color:white;padding:13px 16px;font-size:10px;letter-spacing:2px}.problem h2{font-size:clamp(38px,4.7vw,58px)}.problem p{color:#666;line-height:1.9}.statline{display:flex;gap:28px;margin-top:30px}.statline strong{display:block;font-family:'Playfair Display',serif;font-size:30px;color:var(--red)}.statline span{font-size:11px;color:var(--muted)}
+.dark{background:#171719;color:white}.dark .section-head p{color:#bbb}.dark .section-head .eyebrow{color:var(--gold)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#222225;border:1px solid #38383b;padding:30px;min-height:250px;transition:.25s}.card:hover{transform:translateY(-6px);border-color:var(--gold)}.num{font-family:'Playfair Display',serif;font-size:42px;color:var(--gold)}.card h3{font-size:25px;margin:16px 0 10px}.card p{font-size:13px;line-height:1.8;color:#bbb}
+.myth-area{background:#eee8de}.myth-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.myth{padding:32px;background:white;border:1px solid var(--line);min-height:215px}.myth .tag{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--red);font-weight:800}.myth h3{font-size:27px;margin:14px 0}.myth p{font-size:13px;line-height:1.7;color:#6e6a64}.reveal{display:none;margin-top:15px;padding-top:15px;border-top:1px solid var(--line);font-size:13px;line-height:1.7;color:#393631}.myth.open .reveal{display:block}.reveal-btn{border:0;background:none;padding:0;color:var(--red);font-size:11px;letter-spacing:1px;font-weight:800;text-transform:uppercase}
+.quizbox{max-width:760px;margin:auto;background:#222225;border:1px solid #414146;padding:clamp(25px,5vw,55px);text-align:center}.quizbox h3{font-size:32px}.quiz-question{font-size:17px;line-height:1.6;margin:25px 0}.quiz-options{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.quiz-options button{background:transparent;color:white;border:1px solid #777;padding:13px 25px}.quiz-options button:hover{border-color:var(--gold);color:var(--gold)}#quiz-feedback{min-height:45px;margin-top:22px;color:var(--gold);line-height:1.6;font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}.step{border-top:2px solid var(--red);padding-top:23px}.step small{color:var(--red);font-weight:800;letter-spacing:2px}.step h3{font-size:28px}.step p{font-size:13px;color:#6d6962;line-height:1.8}
+.impact{background:var(--red);color:white;text-align:center}.impact h2{max-width:800px;margin:15px auto}.impact p{max-width:640px;margin:0 auto;color:#f2dfe0;line-height:1.8}.metrics{display:flex;justify-content:center;gap:70px;margin-top:42px;flex-wrap:wrap}.metric strong{display:block;font-family:'Playfair Display',serif;font-size:48px}.metric span{font-size:11px;letter-spacing:1px;text-transform:uppercase}
+footer{background:#111114;color:white;padding:55px 9%;display:flex;justify-content:space-between;gap:25px;align-items:center;flex-wrap:wrap}.footbrand{font-family:'Playfair Display',serif;font-size:30px;letter-spacing:4px}.footbrand span{color:var(--gold)}footer p{font-size:11px;color:#aaa;line-height:1.7}
+@media(max-width:800px){.navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:#111114;padding:25px 7%;flex-direction:column;gap:20px}.navlinks.show{display:flex}.menu{display:block}.hero{grid-template-columns:1fr}.hero-copy{padding:80px 8% 65px}.hero-art{min-height:380px}.problem{grid-template-columns:1fr;gap:35px}.problem-img{height:330px}.cards,.steps{grid-template-columns:1fr}.myth-grid{grid-template-columns:1fr}section{padding:75px 7%}.metrics{gap:35px}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="#inicio">SHINJITSU<span>.</span></a>
+  <button class="menu" id="menuBtn" aria-label="Abrir menú">☰</button>
+  <div class="navlinks" id="navlinks">
+    <a href="#concepto">La idea</a><a href="#mitos">Mitos y verdades</a><a href="#experiencia">La experiencia</a><a href="#quiz">Trivia</a>
+  </div>
+</nav>
+<header class="hero" id="inicio">
+  <div class="hero-copy">
+    <div class="eyebrow">Una campaña de Invictus</div>
+    <h1>¿Crees que<br>conoces <em>Japón?</em></h1>
+    <p>Hay mucho más detrás de lo que ves en una pantalla. Descubre una cultura que va más allá del anime, la tecnología y los estereotipos.</p>
+    <div class="actions"><a class="btn" href="#mitos">Desbloquea la verdad ↗</a><a class="btn outline" href="#concepto">Conoce la campaña</a></div>
+  </div>
+  <div class="hero-art"><div class="art-label">Tradición · Vida · Cultura</div></div>
+</header>
+<div class="marquee">Más allá de lo que imaginas. Más cerca de lo que compartimos.</div>
+
+<section id="concepto">
+  <div class="problem">
+    <div class="problem-img"></div>
+    <div>
+      <div class="eyebrow">El punto de partida</div>
+      <h2>Japón es más que una imagen.</h2>
+      <p>La cultura popular nos acerca a Japón, pero a veces también reduce una cultura diversa a unas pocas imágenes: robots, anime y ciudades futuristas.</p>
+      <p>Shinjitsu nace para despertar curiosidad y acercar a los estudiantes universitarios a los valores humanos, la filosofía de vida y las tradiciones japonesas, con empatía y respeto.</p>
+      <div class="statline"><div><strong>18–24</strong><span>Público universitario</span></div><div><strong>Arequipa</strong><span>Comunidad UCSP</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="mitos">
+  <div class="section-head"><div class="eyebrow">Desbloquea una nueva perspectiva</div><h2>Lo que creías saber.<br>Lo que puedes descubrir.</h2><p>Explora algunos contrastes y amplía tu mirada. La cultura de un país nunca cabe en un solo estereotipo.</p></div>
+  <div class="cards">
+    <article class="card"><div class="num">01</div><h3>Más que tecnología</h3><p>La innovación convive con oficios, artes y prácticas tradicionales que siguen formando parte de la vida cultural japonesa.</p></article>
+    <article class="card"><div class="num">02</div><h3>Más que anime</h3><p>El entretenimiento es una puerta de entrada, pero la historia, la gastronomía, las expresiones artísticas y las costumbres cuentan muchas otras historias.</p></article>
+    <article class="card"><div class="num">03</div><h3>Más que postales</h3><p>Detrás de los paisajes icónicos existe una sociedad diversa, con experiencias cotidianas y personas reales.</p></article>
+  </div>
+</section>
+
+<section class="myth-area">
+  <div class="section-head"><div class="eyebrow">Mito o realidad</div><h2>Desliza el velo.</h2><p>Lee cada afirmación y revela una perspectiva más completa.</p></div>
+  <div class="myth-grid">
+    <article class="myth"><div class="tag">Afirmación 01</div><h3>«Japón es solamente tecnología y ciudades futuristas».</h3><button class="reveal-btn">Revelar perspectiva +</button><div class="reveal">Japón también reúne comunidades, paisajes, artes tradicionales, festividades y formas de vida muy distintas entre sí. La modernidad es solo una parte del panorama.</div></article>
+    <article class="myth"><div class="tag">Afirmación 02</div><h3>«El anime representa toda la cultura japonesa».</h3><button class="reveal-btn">Revelar perspectiva +</button><div class="reveal">El anime es una expresión cultural influyente, pero no sustituye la diversidad de la literatura, la música, la gastronomía, la historia y las tradiciones del país.</div></article>
+    <article class="myth"><div class="tag">Afirmación 03</div><h3>«Conocer un país es conocer sus lugares turísticos».</h3><button class="reveal-btn">Revelar perspectiva +</button><div class="reveal">Viajar también implica acercarse con respeto a las personas, comprender las costumbres locales y reconocer que cada cultura tiene contextos propios.</div></article>
+    <article class="myth"><div class="tag">Afirmación 04</div><h3>«La tradición y la modernidad no pueden convivir».</h3><button class="reveal-btn">Revelar perspectiva +</button><div class="reveal">En Japón, elementos tradicionales y contemporáneos coexisten. Esa convivencia es parte de lo que hace tan interesante explorar su cultura.</div></article>
+  </div>
+</section>
+
+<section class="dark" id="quiz">
+  <div class="section-head"><div class="eyebrow">El desafío Shinjitsu</div><h2>¿Cuánto sabes realmente?</h2><p>Pon a prueba tu curiosidad con esta mini trivia.</p></div>
+  <div class="quizbox">
+    <div class="eyebrow" id="quiz-count">PREGUNTA 1 DE 3</div>
+    <h3 id="quiz-title">Desbloquea tu conocimiento</h3>
+    <div class="quiz-question" id="quiz-question">¿Cuál de estas opciones describe mejor la cultura japonesa?</div>
+    <div class="quiz-options" id="quiz-options">
+      <button data-answer="a">Solo tecnología</button><button data-answer="b">Una cultura diversa</button><button data-answer="c">Solo anime</button>
+    </div>
+    <div id="quiz-feedback" aria-live="polite"></div>
+  </div>
+</section>
+
+<section id="experiencia">
+  <div class="section-head"><div class="eyebrow">La campaña en acción</div><h2>De la curiosidad a la experiencia.</h2><p>Una estrategia que conecta el entorno universitario con los espacios digitales que los estudiantes ya utilizan.</p></div>
+  <div class="steps">
+    <article class="step"><small>FASE 01</small><h3>Descubre</h3><p>Videos breves de «Mito o realidad» y entrevistas para despertar preguntas en TikTok y YouTube Shorts.</p></article>
+    <article class="step"><small>FASE 02</small><h3>Participa</h3><p>Un panel interactivo en el campus invita a compartir estereotipos y descubrir nuevos datos sobre Japón.</p></article>
+    <article class="step"><small>FASE 03</small><h3>Desbloquea</h3><p>Una trivia online invita a poner a prueba lo aprendido y compartir la experiencia.</p></article>
+  </div>
+</section>
+
+<section class="impact">
+  <div class="eyebrow" style="color:#f5dba9">Lo que buscamos lograr</div>
+  <h2>Una mirada más curiosa, empática y respetuosa.</h2>
+  <p>Shinjitsu busca convertir el interés por Japón en una oportunidad para aprender, cuestionar ideas previas y acercarnos a otras culturas.</p>
+  <div class="metrics"><div class="metric"><strong>150–200</strong><span>Visualizaciones objetivo</span></div><div class="metric"><strong>100+</strong><span>Interacciones objetivo</span></div></div>
+</section>
+<footer>
+  <div><div class="footbrand">SHINJITSU<span>.</span></div><p>La verdad desbloqueada de Japón.<br>Una campaña creada por Agencia Invictus.</p></div>
+  <div><div class="eyebrow">Mira más allá</div><p>La curiosidad es el primer paso<br>para comprender otra cultura.</p><a class="btn" href="#inicio">Volver al inicio ↑</a></div>
+</footer>
+<script>
+document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('navlinks').classList.toggle('show'));
+document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navlinks').classList.remove('show')));
+document.querySelectorAll('.reveal-btn').forEach(btn=>btn.addEventListener('click',()=>{const card=btn.closest('.myth');card.classList.toggle('open');btn.textContent=card.classList.contains('open')?'Ocultar perspectiva −':'Revelar perspectiva +'}));
+const questions=[
+ {q:'¿Cuál de estas opciones describe mejor la cultura japonesa?',opts:['Solo tecnología','Una cultura diversa','Solo anime'],correct:1,why:'¡Exacto! Japón reúne expresiones tradicionales y contemporáneas, y no puede reducirse a una sola imagen.'},
+ {q:'¿El anime representa por sí solo toda la cultura de Japón?',opts:['Sí','No'],correct:1,why:'¡Bien! El anime es una expresión cultural importante, pero existen muchas otras historias, artes y tradiciones.'},
+ {q:'¿Qué actitud ayuda a comprender mejor otra cultura?',opts:['Asumir estereotipos','Observar con respeto y curiosidad','Quedarse solo con lo turístico'],correct:1,why:'¡Así es! La empatía, el respeto y la curiosidad permiten acercarnos a otras realidades.'}
+];
+let qi=0,score=0,answered=false;
+function renderQuiz(){answered=false;const q=questions[qi];document.getElementById('quiz-count').textContent=`PREGUNTA ${qi+1} DE ${questions.length}`;document.getElementById('quiz-title').textContent='Desbloquea tu conocimiento';document.getElementById('quiz-question').textContent=q.q;document.getElementById('quiz-feedback').textContent='';const box=document.getElementById('quiz-options');box.innerHTML='';q.opts.forEach((o,i)=>{const b=document.createElement('button');b.textContent=o;b.onclick=()=>answer(i);box.appendChild(b)})}
+function answer(i){if(answered)return;answered=true;const q=questions[qi];if(i===q.correct)score++;document.getElementById('quiz-feedback').textContent=(i===q.correct?'✓ ¡Correcto! ':'↗ Sigue descubriendo. ')+q.why;const box=document.getElementById('quiz-options');box.innerHTML='';const b=document.createElement('button');b.textContent=qi===questions.length-1?'Ver mi resultado':'Siguiente pregunta →';b.onclick=()=>{if(qi<questions.length-1){qi++;renderQuiz()}else{document.getElementById('quiz-count').textContent='TU RESULTADO';document.getElementById('quiz-title').textContent=`¡Desbloqueaste ${score} de ${questions.length}!`;document.getElementById('quiz-question').textContent=score===3?'¡Excelente! Tu curiosidad está en marcha.':'Cada respuesta es una oportunidad para aprender algo nuevo.';document.getElementById('quiz-feedback').textContent='La verdad se descubre con curiosidad. Gracias por participar en Shinjitsu.';box.innerHTML='';const r=document.createElement('button');r.textContent='Volver a intentar ↻';r.onclick=()=>{qi=0;score=0;renderQuiz()};box.appendChild(r)}};box.appendChild(b)}
+renderQuiz();
+</script>
+</body>
+</html>
