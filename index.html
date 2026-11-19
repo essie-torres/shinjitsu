@@ -214,6 +214,23 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offse
 @media(max-width:760px){.stereo-columns{grid-template-columns:1fr}.shinji-float-button{width:72px;height:72px}.shinji-bubble{max-width:185px}.stereo-panel{padding:22px}}
 @media(prefers-reduced-motion:reduce){.shinji-float-button{animation:none}.shinji-bubble{animation:none}}
 
+
+.spotify-section{background:linear-gradient(135deg,#071d2b 0%,#10234b 62%,#152c63 100%);color:#fff;position:relative;overflow:hidden}
+.spotify-section:before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:#315bff33;filter:blur(5px);top:-150px;right:-80px}
+.spotify-section .section-head{position:relative;z-index:1}
+.spotify-section .section-head .eyebrow{color:#a9baff}
+.spotify-section .section-head h2{color:#fff}
+.spotify-section .section-head p{color:#d7dced}
+.spotify-wrap{position:relative;z-index:1;max-width:1000px;margin:auto;display:grid;grid-template-columns:.75fr 1.25fr;gap:28px;align-items:center;background:#ffffff0c;border:1px solid #ffffff24;border-radius:16px;padding:clamp(18px,3vw,32px);box-shadow:0 24px 55px #0004}
+.spotify-copy{padding:10px}
+.spotify-kicker{font-size:10px;letter-spacing:2px;color:#a9baff;font-weight:800}
+.spotify-copy h3{font-size:clamp(28px,3vw,40px);line-height:1.1;margin:16px 0}
+.spotify-copy p{color:#d5d9e7;line-height:1.8;font-size:14px}
+.spotify-note{display:inline-block;margin-top:15px;padding:10px 13px;border-radius:30px;background:#315bff;color:#fff;font-size:11px;font-weight:700;letter-spacing:.5px}
+.spotify-player{min-width:0}
+.spotify-player iframe{display:block;width:100%;max-width:100%;border:0;min-height:352px;background:#121212}
+@media(max-width:800px){.spotify-wrap{grid-template-columns:1fr}.spotify-copy{padding:4px}.spotify-player iframe{height:352px}}
+
 </style>
 </head>
 <body>
@@ -221,7 +238,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offse
   <a class="logo" href="#inicio">SHINJITSU<span>.</span></a>
   <button class="menu" id="menuBtn" aria-label="Abrir menú">☰</button>
   <div class="navlinks" id="navlinks">
-    <a href="#concepto">La idea</a><a href="#nico">Conoce a Nico</a><a href="#shinji">Shinji</a><a href="#cultura">Cultura japonesa</a><a href="#referencias">Referencias</a><a href="#estereotipos">Estereotipos</a><a href="#resultados">Metas</a><a href="#decide">Tú decides</a><a href="#mitos">Mitos y verdades</a><a href="#experiencia">La experiencia</a><a href="#quiz">Trivia</a>
+    <a href="#concepto">La idea</a><a href="#nico">Conoce a Nico</a><a href="#shinji">Shinji</a><a href="#cultura">Cultura japonesa</a><a href="#referencias">Referencias</a><a href="#estereotipos">Estereotipos</a><a href="#playlist">Playlist</a><a href="#resultados">Metas</a><a href="#decide">Tú decides</a><a href="#mitos">Mitos y verdades</a><a href="#experiencia">La experiencia</a><a href="#quiz">Trivia</a>
   </div>
 </nav>
 <header class="hero" id="inicio">
@@ -481,6 +498,30 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offse
     </div>
   </div>
   <p class="stats-footnote">Indicadores propuestos para evaluar el desempeño de la campaña durante su ejecución.</p>
+</section>
+
+
+<section class="spotify-section" id="playlist">
+  <div class="section-head">
+    <div class="eyebrow">El soundtrack de SHINJITSU</div>
+    <h2>Japón también se descubre escuchando.</h2>
+    <p>Acompaña tu recorrido por la cultura japonesa con nuestra playlist. Dale play mientras exploras, respondes la trivia y descubres nuevas perspectivas.</p>
+  </div>
+  <div class="spotify-wrap">
+    <div class="spotify-copy">
+      <span class="spotify-kicker">SHINJITSU · PLAYLIST OFICIAL</span>
+      <h3>Un viaje en cada canción.</h3>
+      <p>Una selección musical para entrar en el ambiente de la campaña y seguir descubriendo Japón a través de sus sonidos.</p>
+      <div class="spotify-note">♪ Escúchala mientras recorres la página</div>
+    </div>
+    <div class="spotify-player">
+      <iframe data-testid="embed-iframe" style="border-radius:12px"
+        src="https://open.spotify.com/embed/playlist/56klEjQ1uCKxFgsulCLvK7?utm_source=generator&amp;si=5bf4b0f54c434856"
+        width="100%" height="352" frameborder="0" allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy" title="Playlist oficial de SHINJITSU en Spotify"></iframe>
+    </div>
+  </div>
 </section>
 
 <section class="sources" id="referencias">
